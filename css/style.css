@@ -111,6 +111,7 @@ h1 + p, p + p {
 .card-info {
   padding: 20px;
   position: absolute;
+  word-break: keep-all;
   bottom: 0;
   color: #fff;
   -webkit-transform: translateY(20%);
