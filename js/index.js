@@ -27,27 +27,26 @@ class Card extends React.Component {
 
 class Deck extends React.Component {
 	constructor(props) {
-		super(props)
+		super(props);
 
+		this.state = {
+			cards: this.props.cardList.map(function(card){
+					return (
+						<Card
+							title	= {card.title}
+							bgImage	= {card.bgImage}
+							date	= {card.date}
+						/>);
+				}),
+		}
+		console.log(this.props.cardList);
+		console.log(this.state.cards);
 	}
 	
 	render() {
-		const cardStyle = {
-			backgroundImage: 'url(' + 1 + ')',
-		};
-		
 		return (
 			<div id="container">
-				<Card
-					title 	= "Star Wars"
-					bgImage	= "https://33hpwq10j9luq8gl43e62q4e-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/1jw_tyZoU5qoOrOOOvQlBLg.jpeg"
-					date		= "25 May 1977"
-				/>
-				<Card
-					title 	= "君の名は。"
-					bgImage	= "https://iwiz-movies.c.yimg.jp/c/movies/pict/p/p/32/91/169395_02.jpg"
-					date		= "3 Jul 2016"
-				/>
+				{this.state.cards}
 			</div>
 		)
 	}
@@ -57,14 +56,14 @@ class Deck extends React.Component {
 
 const cardList = [
 	{
-		title		: "Star Wars",
+		title	: "Star Wars",
 		bgImage	: "https://33hpwq10j9luq8gl43e62q4e-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/1jw_tyZoU5qoOrOOOvQlBLg.jpeg",
-		date		: "25 May 1977",
+		date	: "25 May 1977",
 	},
 	{
-		title 	: "君の名は。",
+		title	: "君の名は。",
 		bgImage	: "https://iwiz-movies.c.yimg.jp/c/movies/pict/p/p/32/91/169395_02.jpg",
-		date		: "3 Jul 2016"	,
+		date	: "3 Jul 2016"	,
 	},
 ];
 
@@ -75,6 +74,17 @@ ReactDOM.render(
 
 
 /*
+
+<Card
+					title	= "Star Wars"
+					bgImage	= "https://33hpwq10j9luq8gl43e62q4e-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/1jw_tyZoU5qoOrOOOvQlBLg.jpeg"
+					date	= "25 May 1977"
+				/>
+				<Card
+					title	= "君の名は。"
+					bgImage	= "https://iwiz-movies.c.yimg.jp/c/movies/pict/p/p/32/91/169395_02.jpg"
+					date	= "3 Jul 2016"
+				/>
 
 		this.state = {
 			cardList:	this.props.cardList.map(function(card){
