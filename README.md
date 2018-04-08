@@ -1,7 +1,8 @@
 # dna
 
 ** No longer being updated! **
-New version at https://github.com/tehdarthvid/dna-react.
+
+New version at https://github.com/tehdarthvid/dna-vue.
 
 Personal influence DNA project for web development study.
 
